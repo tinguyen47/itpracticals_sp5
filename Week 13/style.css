@@ -1,7 +1,4 @@
 
-
-
-
 body {background-color: var(--c-background-color);
 max-width:800px ;
 }
@@ -24,9 +21,8 @@ h1, h2, h3{padding-top: 50px;}
   --c-green: rgb(133, 153, 0);
 }
 
-header {
-  font-size: 150%; text-align: center; color: var(--c-yellow);
-}
+header {font-size: 150%; text-align: center; color: var(--c-yellow);}
+
 
 footer {
   background-color: var(--c-background-highlights);
@@ -39,9 +35,9 @@ main, footer, header {
 link {color: var(--c-magenta);}
 link:hover {color: var(--c-orange)}
 
-.subsection1 {border: 3px, solid, var(--c-cyan);}
-.subsection2 {border: 3px, solid, var(--c-cyan);}
-aside h2 {font-size: 150%; text-align: center; color: var(--c-yellow)}
+.subsection1 {border: 3px solid var(--c-cyan);}
+.subsection2 {border: 3px solid var(--c-cyan);}
+
 nav ul {
   list-style: none; 
   display: flex; 
