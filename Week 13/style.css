@@ -1,6 +1,6 @@
 
 body {background-color: var(--c-background-color);
-max-width:800px ;
+max-width: 800px;
 }
 
 h1, h2, h3{padding-top: 50px;}
@@ -33,7 +33,7 @@ main, footer, header {
 }
 
 link {color: var(--c-magenta);}
-link:hover {color: var(--c-orange)}
+link:hover {color: var(--c-orange);}
 
 .subsection1 {border: 3px solid var(--c-cyan);}
 .subsection2 {border: 3px solid var(--c-cyan);}
@@ -47,7 +47,7 @@ nav ul {
 nav li {
   margin: 0 20px; 
 }
-aside{color: var(--c-green)} 
+aside{color: var(--c-green);} 
 
 aside a {color: var(--c-red);}
 
