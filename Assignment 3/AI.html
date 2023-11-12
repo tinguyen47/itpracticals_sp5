@@ -10,18 +10,77 @@
         <header>
             <h1>The Impact of Artificial Intelligence on the Business Field and Leveraging the Technology for Success</h1>
         </header>
-        <main> 
+        <main>
+    <!--Date & Time--> 
             <h2>Current date and time:</h2>
         <span id="datetime"></span>
     
         <script>
-          function updateDateTime() {
+    ///Date & Time
+        function updateDateTime() {
             const now = new Date();
             const currentDateTime = now.toLocaleString();
             document.querySelector('#datetime').textContent = currentDateTime;
                                     }
-          setInterval(updateDateTime, 1000);
-        </script>     
+        setInterval(updateDateTime, 1000);
+
+    //Theme Toggle                               
+        function toggleTheme() {
+            const root = document.documentElement;
+            const currentTheme = root.getAttribute('data-theme');
+
+            if (currentTheme === 'light') 
+            {root.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            } 
+            else                  
+            {root.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            }
+                                }
+        document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+                                                                  });
+        document.addEventListener('DOMContentLoaded', function () {
+        const root = document.documentElement;
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme) {
+        root.setAttribute('data-theme', savedTheme);
+                        }
+
+  // Add the event listener for the theme toggle button
+  document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+});                                                          
+
+    //Username
+        function updateUsername() {
+            const userName = document.getElementById('user-name').value;
+            const headingElement = document.getElementById('welcome-heading');
+            
+            if (userName) {headingElement.textContent = `Hello, ${userName}`;
+                            localStorage.setItem('userName',userName);  
+                          }
+
+            else          {headingElement.textContent = "Hello, Guest";
+                           localStorage.removeItem('userName');
+                          }
+                                  }   
+            document.addEventListener('DOMContentLoaded', function () {
+            const savedUserName = localStorage.getItem('userName');
+            const headingElement = document.getElementById('welcome-heading');
+
+            if (savedUserName) {
+            headingElement.textContent = `Hello, ${savedUserName}`;
+            document.getElementById('user-name').value = savedUserName;
+                                }
+                                                                      });
+
+// Call updateUsername to set the initial username when the page loads
+updateUsername();                                  
+
+        </script> 
+    <!--Navigation Bar-->    
                 <nav>
                     <ul>
                       <li><a href="#introduction">Introduction</a></li>
@@ -30,7 +89,14 @@
                       <li><a href="#conclusion">Conclusion and Recommendation</a></li>
                     </ul>
                   </nav>
+    <!--Theme Button-->
                   <button id="theme-toggle">Toggle Theme</button>
+    <!--Username box-->
+                  <h1 id="welcome-heading">Hello, User</h1>
+                  <form id="name-form">
+                  <input type="text" id="user-name" placeholder="Enter your name">
+                  <button type="button" onclick="updateUsername()">Submit</button>
+                </form>
                 <section id="introduction">
                     <h2>INTRODUCTION</h2>
                     <p><img src ="https://miro.medium.com/v2/resize:fit:800/0*O-WDhJSeJR-T62_m"></p>
@@ -117,17 +183,5 @@
                 <p><button><a href="#top">Back to Top</a></button></p>
             </section>
         </main>
-        <script>
-            function toggleTheme() {
-            const root = document.documentElement;
-            const currentTheme = root.getAttribute('data-theme');
-
-            if (currentTheme === 'light') 
-            {root.setAttribute('data-theme', 'dark');} 
-            else                  
-            {root.setAttribute('data-theme', 'light');}
-                                    }
-            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-        </script>
     </body>
 </html>
